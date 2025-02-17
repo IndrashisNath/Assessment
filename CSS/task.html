@@ -1,0 +1,113 @@
+<!-- Creates a smiley entirely with pure CSS embedded in HTML -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smiley</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      /* Smiley face container styles */
+      .smiley-face {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: #f9d67a;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Eye styles */
+      .smiley-eye {
+        position: absolute;
+        width: 24px;
+        height: 36px;
+        background-color: #755616;
+        border-radius: 50%;
+      }
+
+      .smiley-eye.left {
+        left: 56px;
+        top: 60px;
+      }
+
+      .smiley-eye.right {
+        right: 56px;
+        top: 60px;
+      }
+
+      /* Mouth styles */
+      .smiley-mouth {
+        position: absolute;
+        bottom: 40px;
+        width: 100px;
+        height: 46px;
+        background-color: #755616;
+        border-radius: 0 0 50px 50px;
+      }
+
+      /* Upper part of the mouth (to create the smile effect) */
+      .smiley-mouth::before {
+        content: "";
+        position: absolute;
+        bottom: 36px;
+        width: 100px;
+        height: 28px;
+        background-color: #f9d67a;
+        border-radius: 50%;
+        box-shadow: 0px 8px #755616;
+        z-index: 1;
+      }
+
+      /* Tongue styles */
+      .smiley-tongue {
+        content: "";
+        position: absolute;
+        bottom: -36px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 52px;
+        height: 72px;
+        background-color: #e37784;
+        border-radius: 0 0 50px 50px;
+      }
+
+      /* Tongue detail (middle line) */
+      .smiley-tongue::after {
+        content: "";
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 44px;
+        background-color: #d75459;
+        border-radius: 0 0 50px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="smiley-face">
+      <div class="smiley-eye left"></div>
+      <div class="smiley-eye right"></div>
+      <div class="smiley-mouth">
+        <div class="smiley-tongue"></div>
+      </div>
+    </div>
+  </body>
+</html>
